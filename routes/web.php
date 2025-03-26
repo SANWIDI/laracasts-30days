@@ -8,8 +8,21 @@ Route::get('/', function () {
 });
 
 Route::get('/jobs', function () {
+//    eager load, give me all jobs WITH the employer
+//    get() = select*, it is fetching every single record of the table
+    //$jobs = Job::with('employer')->get();
+// so we need to be careful about the memory so we will use pagination
+    //3= how many job you will see on the page
+    //$jobs = Job::with('employer')->paginate(3);
+//simple paginate: only see previous and next for page that your record use, no extra
+    $jobs = Job::with('employer')->simplePaginate(3);
+    //CursorPaginate, when hover the next button it gives the link
+     //$jobs = Job::with('employer')->cursorPaginate(3);
+
+    //$jobs = Job::all();
+
     return view('jobs', [
-        'jobs' => Job::all()
+        'jobs' => $jobs
     ]);
 });
 
