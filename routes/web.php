@@ -43,6 +43,12 @@ Route::get('/jobs/create', function () {
 Route::post('/jobs', function () {
     //dd(request()->all()); getting all job create
     //we can specify what we want to be return /dd(request()->$title();
+    //request clientside validation
+    request()->validate([
+        'title' => ['required', 'min:3'],
+        'salary' => ['required']
+
+    ]);
     //before validation with the id
     Job::create([
         'title' => request('title'),
