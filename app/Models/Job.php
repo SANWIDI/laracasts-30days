@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+
 // Created using `php artisan make:model Job` command
 class Job extends Model {
     use HasFactory;
@@ -14,6 +15,7 @@ class Job extends Model {
 //    protected $fillable = ['employer_id','title', 'salary'];
 // protected $guarded
     protected $guarded = [];
+
 
     public function employer()
     {
