@@ -101,7 +101,7 @@ Route::patch('/jobs/{id}', function ($id) {
     ]);
 
         //redirect to the job page
-    return redirect('/jobs' . $job->id);
+    return redirect('/jobs/' . $job->id);
     });
     //end of update
 
@@ -120,9 +120,12 @@ Route::delete('/jobs/{id}', function ($id) {
 
 
 
+
+
 //Show: display one job
 Route::get('/jobs/{id}', function ($id) {
-    $job = Job::find($id);
+   $job = Job::find($id);
+   // $job = Job::where('id',$id);
 
     return view('jobs.show', ['job' => $job]);
 });

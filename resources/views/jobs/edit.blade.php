@@ -82,7 +82,7 @@
 
 
     </form>
-    when I click that button it will submit the form delete
+{{--    when I click that button it will submit the form delete--}}
     <form method="POST" action="/jobs/{{ $job->id }}" id="delete-form" class="hidden">
         @csrf
         @method('DELETE')
