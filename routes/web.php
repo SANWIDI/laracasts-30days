@@ -17,7 +17,10 @@ Route::post('/register', [RegisteredUserController::class, 'store']);
 
 Route::get('/login', [SessionController::class, 'create']);
 Route::post('/login', [SessionController::class, 'store']);
-//
+//logout
+Route::post('/logout', [SessionController::class, 'destroy']);
+
+
 //use App\Models\Job;
 //use Illuminate\Support\Facades\Route;
 //
