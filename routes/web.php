@@ -6,6 +6,15 @@ use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
 
+//first test mailtrap
+//Route::get('test', function () {
+
+//    \Illuminate\Support\Facades\Mail::to('mimi@laracasts.com')->send(
+//        new \App\Mail\JobPosted()
+//    );
+//    return 'Done';
+//});
+
 Route::view('/', 'home');
 Route::view('/contact', 'contact');
 
